@@ -1,18 +1,20 @@
-//Load HTTP module
-const http = require("http");
-const hostname = '127.0.0.1';
+const express = require('express');
+const mongoose = require('mongoose');
+const messagesRouter = require("./routers/messages");
+
+mongoose.connect('mongodb://localhost:27017/test');
+const app = express();
 const port = 3000;
+app.set('view engine', 'pug'); //engine om makkelijk templates te bouwen
 
-//Create HTTP server and listen on port 3000 for requests
-const server = http.createServer((req, res) => {
+app.use(express.json());
+app.use("/", messagesRouter);
 
-    //Set the response HTTP header with HTTP status and Content type
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World\n');
+// REST
+app.get('/', (req, res) => {
+    res.render("index", { title: "cool", message: "yoyo" });
 });
 
-//listen for request on port 3000, and as a callback function have the port listened on logged
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
 });
