@@ -23,9 +23,10 @@ const getAll = (req, res) => {
 };
 
 const getId = (req, res) => {
+    const id = req.params.id;
     const response = {
         status: "success",
-        message: "GETTING message 1",
+        message: `getting message with id ${id}`,
         data: {
             messages: [
                 {
@@ -40,14 +41,17 @@ const getId = (req, res) => {
 };
 
 const create = (req, res) => {
+    let username = req.body.user;
+    let message = req.body.text;
+
     const response = {
         status: "success",
-        message: "POSTING a new message for user Pikachu",
+        message: `POSTING a new message for user ${username}`,
         data: {
             messages: [
                 {
-                    "username": "Pikachu",
-                    "messages": "Nodejs isn’t hard, or is it?"
+                    "username": username,
+                    "messages": message
                 }
             ]
         }
