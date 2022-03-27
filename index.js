@@ -12,7 +12,7 @@ app.use("/", messagesRouter);
 
 // REST
 app.get('/', (req, res) => {
-    res.render("index", { title: "cool", message: "yoyo" });
+    res.render("index", { title: "Node.js api", message: "Welcome to my basic node.js api!" });
 });
 
 app.listen(port, () => {
