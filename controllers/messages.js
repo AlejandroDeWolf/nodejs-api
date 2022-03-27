@@ -38,16 +38,20 @@ const getId = (req, res) => {
 };
 
 const create = async (req, res) => { //asnyc enkel bij functies waar je moet wachten
-    //message saven
-    let username = req.body.username; //body is vergelijkbaar met $_POST array in php
-    let message = req.body.message;
+    const response = {
+        status: "success",
+        message: "POSTING a new message for user Pikachu",
+        data: {
+            messages: [
+                {
+                    "username": "Pikachu",
+                    "messages": "Nodejs isn’t hard, or is it?"
+                }
+            ]
+        }
+    }
 
-    let m = new Message();
-    m.username = username;
-    m.message = message;
-    await m.save(); //mongoose model en await gaat enkel op asynchrone functies
-
-    res.send("POSTING a new messages");
+    res.send("POSTING a new message for user Pikachu");
 };
 
 module.exports.getAll = getAll; //wordt opengesteld zodat deze functie aangeroepen kan worden in andere files zoals bij de routers
