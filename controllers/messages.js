@@ -4,7 +4,7 @@ const Message = require("./../models/message");
 const getAll = (req, res) => {
     const response = {
         status: "success",
-        message: "getting messages",
+        message: "GETTING messages",
         data: {
             messages: [
                 {
@@ -14,6 +14,22 @@ const getAll = (req, res) => {
                 {
                     "username": "Jane",
                     "messages": "Hi"
+                }
+            ]
+        }
+    }
+    res.json(response); //moet mooi teruggegeven worden als json
+};
+
+const getId = (req, res) => {
+    const response = {
+        status: "success",
+        message: "GETTING message 1",
+        data: {
+            messages: [
+                {
+                    "username": "John",
+                    "messages": "Hello"
                 }
             ]
         }
@@ -35,4 +51,5 @@ const create = async (req, res) => { //asnyc enkel bij functies waar je moet wac
 };
 
 module.exports.getAll = getAll; //wordt opengesteld zodat deze functie aangeroepen kan worden in andere files zoals bij de routers
+module.exports.getId = getId;
 module.exports.create = create;
