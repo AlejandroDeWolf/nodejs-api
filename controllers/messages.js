@@ -4,15 +4,16 @@ const Message = require("./../models/message");
 const getAll = (req, res) => {
     const response = {
         status: "success",
+        message: "getting messages",
         data: {
             messages: [
                 {
-                    "username": "Elon",
-                    "messages": "JS is ez"
+                    "username": "John",
+                    "messages": "Hello"
                 },
                 {
-                    "username": "Alejandro",
-                    "messages": "JS is not ez"
+                    "username": "Jane",
+                    "messages": "Hi"
                 }
             ]
         }
