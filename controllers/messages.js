@@ -39,7 +39,7 @@ const getId = (req, res) => {
     res.json(response); //moet mooi teruggegeven worden als json
 };
 
-const create = (req, res) => { //asnyc enkel bij functies waar je moet wachten
+const create = (req, res) => {
     const response = {
         status: "success",
         message: "POSTING a new message for user Pikachu",
@@ -56,7 +56,7 @@ const create = (req, res) => { //asnyc enkel bij functies waar je moet wachten
     res.send("POSTING a new message for user Pikachu");
 };
 
-const update = (req, res) => { //asnyc enkel bij functies waar je moet wachten
+const update = (req, res) => {
     const response = {
         status: "success",
         message: "UPDATING a message with id id",
