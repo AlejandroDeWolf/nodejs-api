@@ -18,6 +18,7 @@ const getAll = (req, res) => {
             ]
         }
     }
+
     res.json(response); //moet mooi teruggegeven worden als json
 };
 
@@ -34,10 +35,11 @@ const getId = (req, res) => {
             ]
         }
     }
+
     res.json(response); //moet mooi teruggegeven worden als json
 };
 
-const create = async (req, res) => { //asnyc enkel bij functies waar je moet wachten
+const create = (req, res) => { //asnyc enkel bij functies waar je moet wachten
     const response = {
         status: "success",
         message: "POSTING a new message for user Pikachu",
@@ -54,6 +56,24 @@ const create = async (req, res) => { //asnyc enkel bij functies waar je moet wac
     res.send("POSTING a new message for user Pikachu");
 };
 
+const update = (req, res) => { //asnyc enkel bij functies waar je moet wachten
+    const response = {
+        status: "success",
+        message: "UPDATING a message with id id",
+        data: {
+            messages: [
+                {
+                    "username": "Pikachu",
+                    "messages": "Nodejs is really hard!"
+                }
+            ]
+        }
+    }
+
+    res.json(response);
+};
+
 module.exports.getAll = getAll; //wordt opengesteld zodat deze functie aangeroepen kan worden in andere files zoals bij de routers
 module.exports.getId = getId;
 module.exports.create = create;
+module.exports.update = update;
