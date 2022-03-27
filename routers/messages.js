@@ -3,6 +3,7 @@ const router = express.Router();
 const messagesController = require("./../controllers/messages");
 
 router.get('/api/v1/messages', messagesController.getAll);
+router.get('/api/v1/messages/:id', messagesController.getId);
 router.post("/api/v1/messages", messagesController.create);
 
 module.exports = router;
