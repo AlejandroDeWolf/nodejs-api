@@ -73,7 +73,24 @@ const update = (req, res) => {
     res.json(response);
 };
 
+const deleteMessage = (req, res) => {
+    const response = {
+        status: "success",
+        message: "DELETING a message with id id",
+        data: {
+            messages: [
+                {
+                    "messages": "The message was removed"
+                }
+            ]
+        }
+    }
+
+    res.json(response);
+};
+
 module.exports.getAll = getAll; //wordt opengesteld zodat deze functie aangeroepen kan worden in andere files zoals bij de routers
 module.exports.getId = getId;
 module.exports.create = create;
 module.exports.update = update;
+module.exports.deleteMessage = deleteMessage;
