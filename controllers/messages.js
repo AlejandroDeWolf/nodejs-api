@@ -9,11 +9,11 @@ const getAll = (req, res) => {
             messages: [
                 {
                     "username": "John",
-                    "messages": "Hello"
+                    "message": "Hello"
                 },
                 {
                     "username": "Jane",
-                    "messages": "Hi"
+                    "message": "Hi"
                 }
             ]
         }
@@ -31,7 +31,7 @@ const getId = (req, res) => {
             messages: [
                 {
                     "username": "John",
-                    "messages": "Hello"
+                    "message": "Hello"
                 }
             ]
         }
@@ -51,13 +51,13 @@ const create = (req, res) => {
             messages: [
                 {
                     "username": username,
-                    "messages": message
+                    "message": message
                 }
             ]
         }
     }
 
-    res.send("POSTING a new message for user Pikachu");
+    res.json(response);
 };
 
 const update = (req, res) => {
@@ -68,7 +68,7 @@ const update = (req, res) => {
             messages: [
                 {
                     "username": "Pikachu",
-                    "messages": "Nodejs is really hard!"
+                    "message": "Nodejs is really hard!"
                 }
             ]
         }
@@ -84,7 +84,7 @@ const deleteMessage = (req, res) => {
         data: {
             messages: [
                 {
-                    "messages": "The message was removed"
+                    "message": "The message was removed"
                 }
             ]
         }
