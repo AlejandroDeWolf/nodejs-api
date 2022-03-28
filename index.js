@@ -4,7 +4,7 @@ const messagesRouter = require("./routers/messages");
 
 // mongoose.connect('mongodb+srv://alejandrodewolf:Alejandro123@cluster0.xgqbm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.set('view engine', 'pug'); //engine om makkelijk templates te bouwen
 
 app.use(express.json());
