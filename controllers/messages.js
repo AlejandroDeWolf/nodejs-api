@@ -61,9 +61,10 @@ const create = (req, res) => {
 };
 
 const update = (req, res) => {
+    const id = req.params.id;
     const response = {
         status: "success",
-        message: "UPDATING a message with id id",
+        message: `UPDATING message with id ${id}`,
         data: {
             messages: [
                 {
@@ -78,9 +79,10 @@ const update = (req, res) => {
 };
 
 const deleteMessage = (req, res) => {
+    const id = req.params.id;
     const response = {
         status: "success",
-        message: "DELETING a message with id id",
+        message: `DELETING message with id ${id}`,
         data: {
             messages: [
                 {
