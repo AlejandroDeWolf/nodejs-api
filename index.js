@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const messagesRouter = require("./routers/messages");
 
-mongoose.connect('mongodb+srv://alejandrodewolf:Alejandro123@cluster0.xgqbm.mongodb.net/test');
+mongoose.connect('mongodb+srv://alejandrodewolf:Alejandro123@cluster0.xgqbm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 const app = express();
 const port = 3000;
 app.set('view engine', 'pug'); //engine om makkelijk templates te bouwen
