@@ -26,7 +26,7 @@ const getId = (req, res) => {
     const id = req.params.id;
     const response = {
         status: "success",
-        message: `getting message with id ${id}`,
+        message: `GETTING message with id ${id}`,
         data: {
             messages: [
                 {
@@ -46,7 +46,7 @@ const create = (req, res) => {
 
     const response = {
         status: "success",
-        message: `POSTING a new message for user ${username}`,
+        message: `POSTING a new message`,
         data: {
             messages: [
                 {
