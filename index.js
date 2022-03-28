@@ -1,9 +1,11 @@
 const express = require('express');
 // const mongoose = require('mongoose');
 const messagesRouter = require("./routers/messages");
+var cors = require('cors')
 
 // mongoose.connect('mongodb+srv://alejandrodewolf:Alejandro123@cluster0.xgqbm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 app.set('view engine', 'pug'); //engine om makkelijk templates te bouwen
 
