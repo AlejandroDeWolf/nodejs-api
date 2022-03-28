@@ -2,24 +2,36 @@ const Message = require("./../models/message");
 
 
 const getAll = (req, res) => {
-    const response = {
-        status: "success",
-        message: "GETTING messages",
-        data: {
-            messages: [
-                {
-                    "username": "John",
-                    "message": "Hello"
-                },
-                {
-                    "username": "Jane",
-                    "message": "Hi"
-                }
-            ]
+    if (req.query.user) {
+        const response = {
+            status: "success",
+            data: {
+                "user": req.query.user,
+                "message": `getting message with username ${req.query.user}`,
+            }
         }
+        res.json(response); //moet mooi teruggegeven worden als json
+    }
+    else {
+        const response = {
+            status: "success",
+            message: "GETTING messages",
+            data: {
+                messages: [
+                    {
+                        "username": "John",
+                        "message": "Hello"
+                    },
+                    {
+                        "username": "Jane",
+                        "message": "Hi"
+                    }
+                ]
+            }
+        }
+        res.json(response);
     }
 
-    res.json(response); //moet mooi teruggegeven worden als json
 };
 
 const getId = (req, res) => {
